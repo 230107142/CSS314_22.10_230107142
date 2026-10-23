@@ -1,0 +1,7 @@
+Student ID: 230107142
+Logical cores: 8 | Physical cores used: 8
+Matrix: 8000 x 8000 float64 (512 MB)
+Checksum A: 31997594,611546 | Checksum B: 31997594,611546
+Mode A (Row-Major)    : 20,42 ms
+Mode B (Column-Major) : 62,44 ms
+Cache penalty factor (B/A): 3,06x
