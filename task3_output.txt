@@ -1,0 +1,3 @@
+Student ID: 230107142 | Elements: 2000000 | Threads: 8
+Last element -> serial: 11001158 | parallel: 11001158
+Serial Time: 1,256 ms | Parallel Time: 1,114 ms | Speedup: 1,13x | Verification: PASS
