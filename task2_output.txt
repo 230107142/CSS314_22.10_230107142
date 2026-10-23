@@ -1,0 +1,5 @@
+Student ID: 230107142
+Samples: 40000000 | Threads: 4
+Shared PRNG (locked)  : pi = 3,14168910 | abs error = 0,00009645 | time = 4316,85 ms
+Independent PRNGs     : pi = 3,14199550 | abs error = 0,00040285 | time = 367,22 ms
+Speedup (shared / independent): 11,76x
