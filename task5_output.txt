@@ -1,0 +1,59 @@
+Student ID: 230107142 | Logical cores: 8 | Tasks: 10000 | Work per task: SHA-256 x500 on 1024 bytes
+
+Pool Size  | Execution Time (ms)  | Speedup vs 1 thread        | Status
+--------------------------------------------------------------------------------------
+1          | 2076,73              | 1,00x                      | BASELINE
+4          | 568,57               | 3,65x                      | SCALING (faster)
+8          | 357,37               | 5,81x                      | SCALING (faster)
+16         | 352,49               | 5,89x                      | PLATEAU (saturated)
+32         | 347,23               | 5,98x                      | PLATEAU (saturated)
+128        | 347,77               | 5,97x                      | PLATEAU (saturated)
+256        | 348,09               | 5,97x                      | PLATEAU (saturated)
+
+Fastest pool size: 32 (347,23 ms)
+No degradation beyond the 3% noise margin was observed up to pool size 256.
+
+javac task1.java
+java -Xmx2g task1 | tee task1_output.txt
+Student ID: 230107142
+Logical cores: 8 | Physical cores used: 8
+Matrix: 8000 x 8000 float64 (512 MB)
+Checksum A: 31997594,611546 | Checksum B: 31997594,611546
+Mode A (Row-Major)    : 16,38 ms
+Mode B (Column-Major) : 54,18 ms
+Cache penalty factor (B/A): 3,31x
+(base) rakhatbitimbay@Rakhats-MacBook-Air Downloads % javac task2.java && java task2 | tee task2_output.txt
+javac task3.java && java task3 | tee task3_output.txt
+javac task4.java && java task4 | tee task4_output.txt
+javac task5.java && java task5 | tee task5_output.txt
+Student ID: 230107142
+Samples: 40000000 | Threads: 4
+Shared PRNG (locked)  : pi = 3,14168910 | abs error = 0,00009645 | time = 3933,88 ms
+Independent PRNGs     : pi = 3,14199550 | abs error = 0,00040285 | time = 363,63 ms
+Speedup (shared / independent): 10,82x
+Student ID: 230107142 | Elements: 2000000 | Threads: 8
+Last element -> serial: 11001158 | parallel: 11001158
+Serial Time: 1,217 ms | Parallel Time: 1,075 ms | Speedup: 1,13x | Verification: PASS
+Student ID: 230107142 | Runs per size: 5
+Path A = pipe: serialize -> write -> child deserializes -> ack
+Path B = shared memory (mmap): copy into shared buffer + signal -> child reads in place -> ack
+Path B handoff = signal + ack only (data already produced in shared memory)
+
+N            Path A (ms)    Path B copy (ms)   Path B handoff (ms)  A / B      Verify  
+100000       0,411          0,050              0,027                8,26       PASS    
+1000000      3,952          0,291              0,028                13,59      PASS    
+10000000     82,983         6,503              0,033                12,76      PASS    
+Student ID: 230107142 | Logical cores: 8 | Tasks: 10000 | Work per task: SHA-256 x500 on 1024 bytes
+
+Pool Size  | Execution Time (ms)  | Speedup vs 1 thread        | Status
+--------------------------------------------------------------------------------------
+1          | 2076,73              | 1,00x                      | BASELINE
+4          | 568,57               | 3,65x                      | SCALING (faster)
+8          | 357,37               | 5,81x                      | SCALING (faster)
+16         | 352,49               | 5,89x                      | PLATEAU (saturated)
+32         | 347,23               | 5,98x                      | PLATEAU (saturated)
+128        | 347,77               | 5,97x                      | PLATEAU (saturated)
+256        | 348,09               | 5,97x                      | PLATEAU (saturated)
+
+Fastest pool size: 32 (347,23 ms)
+No degradation beyond the 3% noise margin was observed up to pool size 256.
